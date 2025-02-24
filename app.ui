@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>100</x>
+    <y>100</y>
+    <width>500</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Gestionare Inventar</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.png</normaloff>icon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #cfd8dc;
+    font-family: 'Segoe UI', 'Arial';
+    font-size: 12pt;
+}
+
+QPushButton {
+    background-color: #263238;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 15px;
+    font-size: 15pt;
+}
+
+QPushButton:hover {
+    background-color: #37474f;
+}
+
+QPushButton:pressed {
+    background-color: #336600;
+}
+
+QLabel {
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+QLineEdit, QTextEdit, QTableWidget {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 10pt;
+    background-color: white;
+}
+
+QTableWidget::item {
+    padding: 4px;
+}
+
+QTableWidget::horizontalHeader {
+    background-color: #eee;
+    color: #333;
+    font-weight: bold;
+}
+
+QInputDialog {
+    font-size: 10pt;
+}
+
+QMessageBox {
+    background-color: #ffffff;
+    font-size: 10pt;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="addButton">
+      <property name="text">
+       <string> ➕Adauga Obiect</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="deleteButton">
+      <property name="text">
+       <string>❌Sterge Obiect</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="listButton">
+      <property name="text">
+       <string>📋Afiseaza Obiecte</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="searchButton">
+      <property name="text">
+       <string>🔍Cauta Obiect</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="allocateButton">
+      <property name="text">
+       <string>📌Aloca Obiect</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

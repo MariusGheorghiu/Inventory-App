@@ -1,0 +1,200 @@
+[
+    {
+        "id": 1,
+        "company": "ASUS",
+        "model": "ROG Strix G15",
+        "year": 2022,
+        "price": 1500,
+        "department": "IT",
+        "allocated_to": "George"
+    },
+    {
+        "id": 2,
+        "company": "MSI",
+        "model": "GE76 Raider",
+        "year": 2021,
+        "price": 2000,
+        "department": "IT",
+        "allocated_to": ""
+    },
+    {
+        "id": 3,
+        "company": "Dell",
+        "model": "XPS 15",
+        "year": 2023,
+        "price": 1800,
+        "department": "IT",
+        "allocated_to": "Elena"
+    },
+    {
+        "id": 4,
+        "company": "HP",
+        "model": "Spectre x360",
+        "year": 2022,
+        "price": 1600,
+        "department": "Marketing",
+        "allocated_to": ""
+    },
+    {
+        "id": 5,
+        "company": "Lenovo",
+        "model": "ThinkPad X1 Carbon",
+        "year": 2021,
+        "price": 1700,
+        "department": "Finance",
+        "allocated_to": "Andrei"
+    },
+    {
+        "id": 6,
+        "company": "Apple",
+        "model": "MacBook Pro 14",
+        "year": 2023,
+        "price": 2500,
+        "department": "Design",
+        "allocated_to": ""
+    },
+    {
+        "id": 7,
+        "company": "Acer",
+        "model": "Predator Helios 300",
+        "year": 2022,
+        "price": 1400,
+        "department": "IT",
+        "allocated_to": ""
+    },
+    {
+        "id": 8,
+        "company": "Razer",
+        "model": "Blade 15",
+        "year": 2021,
+        "price": 2200,
+        "department": "IT",
+        "allocated_to": ""
+    },
+    {
+        "id": 9,
+        "company": "Microsoft",
+        "model": "Surface Laptop Studio",
+        "year": 2023,
+        "price": 2000,
+        "department": "Development",
+        "allocated_to": ""
+    },
+    {
+        "id": 10,
+        "company": "LG",
+        "model": "Gram 17",
+        "year": 2022,
+        "price": 1300,
+        "department": "Sales",
+        "allocated_to": ""
+    },
+    {
+        "id": 11,
+        "company": "Samsung",
+        "model": "Galaxy Book Pro 360",
+        "year": 2021,
+        "price": 1900,
+        "department": "Marketing",
+        "allocated_to": ""
+    },
+    {
+        "id": 12,
+        "company": "Sony",
+        "model": "VAIO SE",
+        "year": 2023,
+        "price": 1700,
+        "department": "IT",
+        "allocated_to": "marian"
+    },
+    {
+        "id": 13,
+        "company": "Toshiba",
+        "model": "Port\u00c3\u00a9g\u00c3\u00a9 X30L",
+        "year": 2022,
+        "price": 1500,
+        "department": "Finance",
+        "allocated_to": ""
+    },
+    {
+        "id": 14,
+        "company": "Fujitsu",
+        "model": "Lifebook U9311",
+        "year": 2021,
+        "price": 1600,
+        "department": "Sales",
+        "allocated_to": ""
+    },
+    {
+        "id": 15,
+        "company": "Panasonic",
+        "model": "Let's note XZ6",
+        "year": 2023,
+        "price": 2100,
+        "department": "IT",
+        "allocated_to": "Marius"
+    },
+    {
+        "id": 16,
+        "company": "Huawei",
+        "model": "MateBook X Pro",
+        "year": 2022,
+        "price": 1800,
+        "department": "Development",
+        "allocated_to": ""
+    },
+    {
+        "id": 17,
+        "company": "Xiaomi",
+        "model": "Mi Notebook Pro X",
+        "year": 2021,
+        "price": 1700,
+        "department": "Design",
+        "allocated_to": ""
+    },
+    {
+        "id": 18,
+        "company": "Clevo",
+        "model": "NH55AF",
+        "year": 2023,
+        "price": 1600,
+        "department": "IT",
+        "allocated_to": ""
+    },
+    {
+        "id": 19,
+        "company": "System76",
+        "model": "Lemur Pro",
+        "year": 2022,
+        "price": 1400,
+        "department": "Marketing",
+        "allocated_to": ""
+    },
+    {
+        "id": 20,
+        "company": "Framework",
+        "model": "Laptop",
+        "year": 2021,
+        "price": 1800,
+        "department": "Finance",
+        "allocated_to": ""
+    },
+    {
+        "id": 21,
+        "company": "Purism",
+        "model": "Librem 14",
+        "year": 2023,
+        "price": 2000,
+        "department": "IT",
+        "allocated_to": ""
+    },
+    {
+        "id": 22,
+        "company": "Nvidia",
+        "model": "2050 Super",
+        "year": 2020,
+        "price": 300.0,
+        "department": "Gaming",
+        "allocated_to": "marius"
+    }
+]
