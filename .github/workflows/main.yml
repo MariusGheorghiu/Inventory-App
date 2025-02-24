@@ -28,7 +28,7 @@ jobs:
 
       - name: Build with PyInstaller
         run: |
-          pyinstaller --noconfirm --onefile --windowed dist/app.exe
+          pyinstaller --confirm --onefile --windowed dist/app.exe
           # Use `--windowed` if your app has a GUI; otherwise, remove it
           # If you have a custom .spec file, specify it like: pyinstaller your_spec_file.spec
 
