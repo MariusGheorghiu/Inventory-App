@@ -12,7 +12,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Check out the code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -23,12 +23,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pyinstaller
-          pip install PyQt6
+          pip install PyQt5
           
 
       - name: Build with PyInstaller
         run: |
-          pyinstaller --noconfirm --onefile --windowed main.py
+          pyinstaller --confirm --onefile --windowed main.py
           # Use `--windowed` if your app has a GUI; otherwise, remove it
           # If you have a custom .spec file, specify it like: pyinstaller your_spec_file.spec
 
@@ -36,4 +36,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: main
-          path: dist/main.exe  # Adjust path if your executable is named differently
+          path: dist/app.exe  # Adjust path if your executable is named differently
