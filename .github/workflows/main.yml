@@ -24,16 +24,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install pyinstaller
           pip install PyQt6
-          
 
       - name: Build with PyInstaller
         run: |
-          pyinstaller --confirm --onefile --windowed dist/app.exe
+          pyinstaller --onefile --windowed --name app app.py
+          # Replace `your_script.py` with the entry point of your application
           # Use `--windowed` if your app has a GUI; otherwise, remove it
           # If you have a custom .spec file, specify it like: pyinstaller your_spec_file.spec
 
       - name: Upload EXE to Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: main
+          name: app
           path: dist/app.exe  # Adjust path if your executable is named differently
