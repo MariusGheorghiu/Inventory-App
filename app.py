@@ -21,39 +21,43 @@ class LoginWindow(QtWidgets.QWidget):
 
         layout = QtWidgets.QVBoxLayout()
 
+        #Camp pentru numele de utilizator
         self.username_input = QtWidgets.QLineEdit(self)
         self.username_input.setPlaceholderText("Nume de utilizator")
         layout.addWidget(self.username_input)
 
+        #Camp pentru parola
         self.password_input = QtWidgets.QLineEdit(self)
         self.password_input.setPlaceholderText("Parolă")
         self.password_input.setEchoMode(QtWidgets.QLineEdit.Password)
         layout.addWidget(self.password_input)
 
+        # Butonul de autentificare
         self.login_button = QtWidgets.QPushButton("Autentificare", self)
         self.login_button.clicked.connect(self.authenticate)
         layout.addWidget(self.login_button)
 
         self.setLayout(layout)
 
+        #Verifica autentificarea utilizatorului
     def authenticate(self):
         username = self.username_input.text()
         password = self.password_input.text()
         user = self.user_manager.authenticate(username, password)
         if user:
-            self.inventory_app.set_user(user)
-            self.inventory_app.show()
+            self.inventory_app.set_user(user) # Stocheaza utilizatorul autentificat
+            self.inventory_app.show() # Afiseaza fereastra principala
             self.close()
         else:
             QtWidgets.QMessageBox.warning(self, "Eroare", "Nume de utilizator sau parola incorecta.")
 
-#Aceasta clasa reprezinta interfața principala a aplicatiei.
+# Aceasta clasa reprezinta interfata principala a aplicatiei.
 class InventoryApp(QtWidgets.QMainWindow):
     def __init__(self, user_manager, inventory_manager):
         super().__init__()
         self.user_manager = user_manager
         self.inventory_manager = inventory_manager
-        self.current_user = None
+        self.current_user = None # Nici un utilizator nu este autentificat
 
         # Seteaza iconita aplicatiei
         self.setWindowIcon(QtGui.QIcon('dist/data/icon.ico'))
@@ -117,10 +121,11 @@ class InventoryApp(QtWidgets.QMainWindow):
 
         self.init_ui()
 
-
+    # Stocheaza utilizatorul autentificat
     def set_user(self, user):
         self.current_user = user
 
+    # Initializam interfata grafica a aplicatiei
     def init_ui(self):
         self.setWindowTitle("Gestionare Inventar")
         self.setGeometry(100, 100, 500, 300)
@@ -131,17 +136,17 @@ class InventoryApp(QtWidgets.QMainWindow):
         self.setCentralWidget(central_widget)
         layout = QtWidgets.QVBoxLayout()
 
-        # Butoane pentru funcționalități
+        # Butoane pentru funcționalitati
         self.add_button = QtWidgets.QPushButton(" ➕Adauga Obiect")
-        self.add_button.clicked.connect(self.add_item_dialog)
+        self.add_button.clicked.connect(self.add_item_if_admin)
         layout.addWidget(self.add_button)
 
         self.delete_button = QtWidgets.QPushButton("❌Sterge Obiect")
-        self.delete_button.clicked.connect(self.delete_item_dialog)
+        self.delete_button.clicked.connect(self.delete_item_if_admin)
         layout.addWidget(self.delete_button)
 
         self.list_button = QtWidgets.QPushButton("📋Afiseaza Obiecte")
-        self.list_button.clicked.connect(self.list_items_dialog)
+        self.list_button.clicked.connect(self.list_items)
         layout.addWidget(self.list_button)
 
         self.search_button = QtWidgets.QPushButton("🔍Cauta Obiect")
@@ -154,7 +159,7 @@ class InventoryApp(QtWidgets.QMainWindow):
 
         central_widget.setLayout(layout)
 
-    def add_item_dialog(self):
+    def add_item_if_admin(self):
         if self.current_user and self.current_user["is_admin"]:
             company, company_entered = QtWidgets.QInputDialog.getText(self, "Adauga Obiect", "Introduceti firma:")
             model, model_entered = QtWidgets.QInputDialog.getText(self, "Adauga Obiect", "Introduceti modelul:")
@@ -185,7 +190,7 @@ class InventoryApp(QtWidgets.QMainWindow):
         else:
             QtWidgets.QMessageBox.warning(self, "Eroare", "Doar administratorii pot adauga obiecte.")
 
-    def delete_item_dialog(self):
+    def delete_item_if_admin(self):
         if self.current_user and self.current_user["is_admin"]:
             # Dialog pentru stergerea unui obiect
             item_id, ok = QtWidgets.QInputDialog.getInt(self, "Sterge Obiect", "Introduceti ID-ul obiectului de sters:")
@@ -198,7 +203,7 @@ class InventoryApp(QtWidgets.QMainWindow):
         else:
             QtWidgets.QMessageBox.warning(self, "Eroare", "Doar administratorii pot sterge obiecte.")
 
-    def list_items_dialog(self):
+    def list_items(self):
         items = self.inventory_manager.list_items()
         dialog = QtWidgets.QDialog(self)
         dialog.setWindowTitle("Lista Obiectelor")
@@ -233,7 +238,7 @@ class InventoryApp(QtWidgets.QMainWindow):
                 table_item.setFont(custom_font)  # Aplicăm fontul personalizat
                 table.setItem(row, column, table_item)
 
-                # Adauga culori diferite pentru fiecare coloana in parte
+                # Adaugam culori diferite pentru fiecare coloana in parte
                 if column == 0:  # ID
                     table_item.setBackground(QtGui.QColor("#d3d3d3"))
                 elif column == 1:  # Firma
